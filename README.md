@@ -9,6 +9,7 @@ This repo has been validated in the following environment.
 - Raspbian buster lite February 2020
 - Docker 19.03.8
 - docker-compose 1.25.5
+- DSD TECH SH-U09C USB
 - iRobot Roomba 643
 
 This dockerfile clones the following repository. Please follow the respective terms of use.

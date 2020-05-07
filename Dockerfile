@@ -15,12 +15,13 @@ RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y tmux && \
     git clone https://github.com/AutonomyLab/libcreate /root/create_ws/src/libcreate && \
-    git clone https://github.com/Sadaku1993/create_autonomy /root/create_ws/src/create_autonomy && \
-    chmod a+rw /dev/ttyUSB0
+    git clone -b dashing-devel https://github.com/Sadaku1993/create_autonomy /root/create_ws/src/create_autonomy
 
 RUN ["/bin/bash", "-c", " \
     source /opt/ros/dashing/setup.bash \
     && colcon build \
     "]
 
-ENTRYPOINT tmux
+ADD ./startup.sh /root/create_ws/startup.sh
+
+CMD ["/root/create_ws/startup.sh"]
