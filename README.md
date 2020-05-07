@@ -6,7 +6,9 @@ Dockerfile to build and run ROS2 dashing on Raspberry Pi 1/2/3/4/Zero
 This repo has been validated in the following environment
 
 - Raspbery Pi 3
-- Raspbian buster lite
+- Raspbian buster lite February 2020
+- Docker 19.03.8
+- docker-compose 1.25.5
 - iRobot Roomba 643
 
 ## Install
