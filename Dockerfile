@@ -1,4 +1,4 @@
-FROM ros2:dashing
+FROM ros:dashing
 
 LABEL Maintainer "Masafumi Harada"
 
