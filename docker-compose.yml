@@ -8,3 +8,4 @@ services:
     privileged: true
     volumes:
       - "/dev/ttyUSB0:/dev/ttyUSB0"
+    tty: true
