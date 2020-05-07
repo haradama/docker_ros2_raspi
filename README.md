@@ -1,4 +1,4 @@
-# docker_ros2_raspi
+# docker_ros2_roomba
 
 Dockerfile to build and run ROS2 dashing on Raspberry Pi 1/2/3/4/Zero
 
