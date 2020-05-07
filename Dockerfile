@@ -22,6 +22,7 @@ RUN ["/bin/bash", "-c", " \
     && colcon build \
     "]
 
-ADD ./startup.sh /root/create_ws/startup.sh
+COPY ./startup.sh /root/create_ws/startup.sh
+RUN chmod +x /root/create_ws/startup.sh
 
 CMD ["/root/create_ws/startup.sh"]
