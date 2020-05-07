@@ -36,6 +36,7 @@ source ~/.bashrc
 
 ```
 git clone https://github.com/haradama/docker_ros2_raspi.git
+cd docker_ros2_raspi
 ```
 
 ## Build and run
