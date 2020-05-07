@@ -3,13 +3,18 @@
 Dockerfile to build and run ROS2 dashing on Raspberry Pi 1/2/3/4/Zero
 
 ## Note
-This repo has been validated in the following environment
+This repo has been validated in the following environment.
 
 - Raspbery Pi 3
 - Raspbian buster lite February 2020
 - Docker 19.03.8
 - docker-compose 1.25.5
 - iRobot Roomba 643
+
+This dockerfile clones the following repository. Please follow the respective terms of use.
+
+- https://github.com/AutonomyLab/libcreate
+- https://github.com/Sadaku1993/create_autonomy 
 
 ## Install
 ### Install dependencies
