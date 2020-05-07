@@ -2,24 +2,41 @@ FROM ros:dashing
 
 LABEL Maintainer "Masafumi Harada"
 
-WORKDIR /root
-
-RUN ["/bin/bash", "-c", " \
-    source /opt/ros/dashing/setup.bash \
-    && ros2 pkg create create_ws \
-    "]
-
-WORKDIR /root/create_ws
+ENV ROS_DISTR dashing
 
 RUN apt-get update -y && \
     apt-get upgrade -y && \
-    apt-get install -y tmux && \
-    git clone https://github.com/AutonomyLab/libcreate /root/create_ws/src/libcreate && \
-    git clone -b dashing-devel https://github.com/Sadaku1993/create_autonomy /root/create_ws/src/create_autonomy
-
+    apt-get install -y libboost-all-dev && \
+    apt-get install -y ros-${ROS_DISTR}-joy* && \
+    mkdir -p /root/create_ws/src && \
+    git clone -b ${ROS_DISTR} https://github.com/ros2/launch.git /root/create_ws/src/launch
+WORKDIR /root/create_ws
 RUN ["/bin/bash", "-c", " \
-    source /opt/ros/dashing/setup.bash \
+    source /opt/ros/${ROS_DISTR}/setup.bash \
     && colcon build \
+    && . install/setup.bash \
+    "]
+
+
+RUN git clone https://github.com/AutonomyLab/libcreate /root/create_ws/src/libcreate
+RUN ["/bin/bash", "-c", " \
+    source /opt/ros/${ROS_DISTR}/setup.bash \
+    && colcon build \
+    && . install/setup.bash \
+    "]
+
+RUN git clone -b ${ROS_DISTR} https://github.com/ros2/teleop_twist_joy /root/create_ws/src/teleop_twist_joy
+RUN ["/bin/bash", "-c", " \
+    source /opt/ros/${ROS_DISTR}/setup.bash \
+    && colcon build \
+    && . install/setup.bash \
+    "]
+
+RUN git clone -b ${ROS_DISTR}-devel https://github.com/Sadaku1993/create_autonomy /root/create_ws/src/create_autonomy
+RUN ["/bin/bash", "-c", " \
+    source /opt/ros/${ROS_DISTR}/setup.bash \
+    && colcon build \
+    && . install/setup.bash \
     "]
 
 COPY ./startup.sh /root/create_ws/startup.sh
