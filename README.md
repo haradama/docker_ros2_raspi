@@ -2,10 +2,15 @@
 
 Dockerfile to build and run ROS2 dashing on Raspberry Pi 1/2/3/4/Zero
 
-## Environment setup
+## Note
+This repo has been validated in the following environment
 
-### Install
-#### Install dependencies
+- Raspbery Pi 3
+- Raspbian buster lite
+- iRobot Roomba 643
+
+## Install
+### Install dependencies
 This repo requires
 - docker
 - docker-compose
@@ -27,13 +32,13 @@ echo export PATH='$PATH:~/.local/bin' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-#### Clone this repo
+### Clone this repo
 
 ```
 git clone https://github.com/haradama/docker_ros2_raspi.git
 ```
 
-#### Build and run
+## Build and run
 ```
 docker-sompose up -d
 ```
