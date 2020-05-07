@@ -1,6 +1,6 @@
 # docker_ros2_roomba
 
-Dockerfile to build and run ROS2 dashing on Raspberry Pi 1/2/3/4/Zero
+Dockerfile to build and run ROS2 dashing on roomba
 
 ## Note
 This repo has been validated in the following environment.
@@ -36,11 +36,12 @@ source ~/.bashrc
 ### Clone this repo
 
 ```
-git clone https://github.com/haradama/docker_ros2_raspi.git
-cd docker_ros2_raspi
+git clone https://github.com/haradama/docker_ros2_roomba.git
+cd docker_ros2_roomba
+docker build -t ros2_roomba:latest .
 ```
 
 ## Build and run
 ```
-docker run --device=/dev/ttyUSB0:/dev/ttyUSB0 /bin/bash
+docker run -it --device=/dev/ttyUSB0:/dev/ttyUSB0 ros2_roomba:latest /bin/bash
 ```
