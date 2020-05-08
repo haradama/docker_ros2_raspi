@@ -13,6 +13,7 @@ This repo has been validated in the following environment.
 
 This dockerfile clones the following repository. Please follow the respective terms of use.
 
+- https://github.com/ros2/teleop_twist_joy
 - https://github.com/AutonomyLab/libcreate
 - https://github.com/Sadaku1993/create_autonomy 
 
