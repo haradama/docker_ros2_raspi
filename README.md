@@ -34,15 +34,13 @@ echo export PATH='$PATH:~/.local/bin' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-### Clone this repo
+### Pull this image
 
 ```
-git clone https://github.com/haradama/docker_ros2_roomba.git
-cd docker_ros2_roomba
-docker build -t ros2_roomba:latest .
+docker pull docker.pkg.github.com/haradama/docker_ros2_roomba/ros2_roomba:latest
 ```
 
-## Build and run
+## Run
 ```
 docker run -it --device=/dev/ttyUSB0:/dev/ttyUSB0 ros2_roomba:latest /bin/bash
 ```
