@@ -42,5 +42,5 @@ docker pull docker.pkg.github.com/haradama/docker_ros2_roomba/ros2_roomba:latest
 
 ## Run
 ```
-docker run -it --device=/dev/ttyUSB0:/dev/ttyUSB0 ros2_roomba:latest /bin/bash
+docker run -it --device=/dev/ttyUSB0:/dev/ttyUSB0 CONTAINER ID /bin/bash
 ```
